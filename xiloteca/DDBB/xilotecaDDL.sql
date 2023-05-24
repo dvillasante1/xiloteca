@@ -1,9 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `xiloteca`;
+CREATE USER 'xiloteca'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL ON xiloteca.* TO 'xiloteca'@'localhost';
 
 USE `xiloteca`;
 
 DROP TABLE IF EXISTS `muestras`;
-
 CREATE TABLE `muestras` (
   `id_muestra` int NOT NULL AUTO_INCREMENT,
   `cient_acept1` varchar(255) DEFAULT NULL,
