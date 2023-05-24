@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Xiloteca Joan Bergós</title>
+<link th:href="@{/css/estilo1.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<main id="contenedor">
+		<div class="contenidos">
+			<div class="separador"></div>
+			<div id="cabecera">
+				<h1>Xiloteca</h1>
+				<h3>- Joan Bergós -</h3>
+			</div>
+		</div>
+		<div id="navlist">
+			| <a th:href="@{/localizacion}">Localización</a> 
+			| <a th:href="@{/logout}">Logout</a>
+		</div>
+		<div class="contenidos">
+			<h3>¿Tiene esta muestra la Xiloteca?</h3>
+			<p>Puede Vd. consultar imágenes de las muestras de madera de la
+				Xiloteca.</p>
+
+			<form id="fmuestra" name="fmuestra" method="get" th:action="@{/muestras}">
+				<input type="text" name="nombre" size="30" maxlength="30" placeholder="Por nombre común o científico" required /> 
+				<input type="hidden" name="page" value="1"> <input type="submit" value="Enviar">
+			</form>
+		</div>
+			<div id="sidebar_texto1">
+				La Universidad de Lleida dispone de una xiloteca, consistente en una
+				colección de maderas, tanto nacionales como de importación.<br>
+				El «embrión» inicial está compuesto por una colección de
+				aproximadamente 500 muestras de maderas donadas por Magdalena Bergós
+				y Mireia Bergós (hijas Joan Bergós i Massó) y catalogadas por Jordi
+				Poch. Al recibir la Universidad de Lleida las muestras, fueron
+				comprobadas una a una y reclasificadas siguiendo los criterios
+				taxonómicos más estrictos.
+			</div>
+			<div id="sidebar_texto2">
+				<h4>¿Sabías qué...?</h4>
+				<ul>
+					<li>Una xiloteca es una colección de maderas y cortezas de
+						plantas leñosas cuyo objetivo principal es conocer el valor
+						científico y económico de las maderas existentes.</li>
+					<li>En la actualidad, la Xiloteca Joan Bergós cuenta con
+						aproximadamente 900 especies diferentes en total, siendo la
+						xiloteca pública más importante del noreste peninsular.</li>
+				</ul>
+			</div>
+		 <div style="clear: both"></div>
+	</main>
+	<footer>Hecho con carino &copy;2023</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Localización. Xiloteca Joan Bergós</title>
+<link th:href="@{/css/estilo1.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="contenedor">
+		<div class="contenidos">
+			<div class="separador"></div>
+			<div id="cabecera">
+				<h1>Xiloteca</h1>
+				<h3>- Joan Bergós -</h3>
+			</div>
+		</div>
+		<div class="contenidos">
+			<h3>Acceso</h3>
+		</div>
+		<div class="separador"></div>
+		<div class="contenidos">
+			<form th:action="@{/login}" method="post">
+				<div id="login">
+					<span th:if="${loginError}" class="rojo">Usuario incorrecto.</span>
+					<table>
+						<tr>
+							<td>Usuario</td>
+							<td>
+								<input type="text" id="username" name="username" autofocus="autofocus" required /></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td><input type="password" id="password" name="password" required /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="submit" value="Entrar"></td>
+						</tr>
+					</table>
+				</div>
+		</div>
+		<div class="contenidos">Al identificarte aceptas nuestras
+			Condiciones de uso. Consulta nuestro Aviso de privacidad y nuestras
+			Aviso de Cookies y Aviso sobre publicidad basada en los intereses del
+			usuario.</div>
+		</form>
+	</div>
+	<footer>Hecho con carino &copy;2023</footer>
+</body>
+</html>

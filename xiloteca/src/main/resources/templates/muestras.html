@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resultados de la búsqueda. Xiloteca Joan Bergós</title>
+<link th:href="@{/css/estilo1.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="contenedor">
+		<div class="contenidos">
+			<div class="separador"></div>
+			<div id="cabecera">
+				<h1>Xiloteca</h1>
+				<h3>- Joan Bergós -</h3>
+			</div>
+		</div>
+		<div id="navlist">
+			| <a th:href="@{/}">Inicio</a> | <a th:href="@{/localizacion}">Localización</a>
+			| <a th:href="@{/logout}">Logout</a>
+		</div>
+		<div class="contenidos">
+			<h3>
+				Resultado de la búsqueda de la muestra <span class="negrita"
+					th:text="${nombre}+'.'"></span>
+			</h3>
+		</div>
+
+		<div class="contenidos"
+			th:if="${totalResultados >= 1 && totalResultados <= 100}">
+			<ul th:each="muestra:${muestras} ">
+				<li>
+					<a th:href="@{'/muestras/'+${muestra.id_muestra}}"> 
+					<span class="cursiva" th:text="${muestra.cient_acept1}"></span> 
+					<span th:text="${muestra.cient_acept2}"></span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="parrafo_paginacion" th:if="${muestras.getTotalPages() > 1 && totalResultados <= 100}">
+			<span class="paginacion" th:each="pageNumber : ${pageNumbers}">
+				<a th:href="@{'/muestras?page=' +${pageNumber}+'&nombre='+${nombre}}" th:text=${pageNumber}></a>
+			</span>
+		</div>
+
+		<div class="contenidos" th:if="${totalResultados < 1}">
+			<p>No se han encontrado resultados.</p>
+		</div>
+		<div class="contenidos" th:if="${totalResultados > 100}">
+			<p>El número de especies encontradas es demasiado grande. Por favór limite su búsqueda.</p>
+		</div>
+	</div>
+</body>
+<footer>Hecho con carino &copy;2023</footer>
+</html>

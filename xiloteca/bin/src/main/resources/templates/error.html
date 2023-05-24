@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Error. Xiloteca Joan Bergós</title>
+<link th:href="@{/css/estilo1.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<main id="contenedor">
+		<div class="contenidos">
+			<div class="separador"></div>
+			<div id="cabecera">
+				<h1>Xiloteca</h1>
+				<h3>- Joan Bergós -</h3>
+			</div>
+		</div>
+		<div id="navlist">
+			| <a th:href="@{/}">Inicio</a> 
+			| <a th:href="@{/localizacion}">Localización</a>
+			| <a th:href="@{/logout}">Logout</a>
+		</div>
+		<div class="contenidos">
+			<h3>Ups..., parece que algo no ha ido bien :(</h3>
+			<p>Ha ocurrido un error al mostrar la página.</p>
+			<!--<span th:text="${keyError}"></span>-->
+			<a th:href="@{/}">Volver</a>
+		</div>
+	</main>
+	<footer>Hecho con carino &copy;2023</footer>
+</body>
+</html>

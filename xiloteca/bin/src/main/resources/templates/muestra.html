@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Detalle muestra. Xiloteca Joan Bergós</title>
+<link th:href="@{/css/estilo1.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<main id="contenedor">
+		<div class="contenidos">
+			<div class="separador"></div>
+				<div id="cabecera">
+					<h1>Xiloteca</h1>
+					<h3>- Joan Bergós -</h3>
+				</div>
+		</div>
+		<div id="navlist">
+			| <a th:href="@{/}">Inicio</a> 
+			| <a th:href="@{/localizacion}">Localización</a> 
+			| <a href="javascript:history.back()">Volver</a> 
+			| <a th:href="@{/logout}">Logout</a>
+		</div>
+		<div class="contenidos">
+			<h3>Ficha de la muestra</h3>
+		</div>
+
+		<div class="contenidos">
+			<p>
+				<span class="negrita">Nombre científico aceptado:</span> 
+				<span class="cursiva" th:text="${muestra.cient_acept1}"></span> 
+				<span th:text="${muestra.cient_acept2}"></span>
+			</p>
+			<p>
+				<span class="negrita">Sinónimo:</span> <span th:text="${muestra.sinonimo}"></span>
+			</p>
+			<p>
+				<span class="negrita">Familia:</span> 
+				<span th:text="${muestra.familia}">
+			</p>
+			<p>
+				<span class="negrita">Nombres vulgares:</span> (los códigos entre paréntesis indican los documentos en los que consta cada nombre vulgar).<br /> <span th:text="${muestra.vulgar}"></span>
+			</p>
+		</div>
+		<div th:if="${!imagenes_lab.empty}">
+			<div class="contenidos">
+				<div th:if="${!imagenes_lab.empty}">
+					<p>
+						<span class="negrita">Muestras disponibles en el laboratorio:</span>
+					</p>
+					<div th:each="imagen_lab:${imagenes_lab}">
+						<img class="img_muestra" th:src="@{'/img/'+${imagen_lab}}">
+					</div>
+
+
+				</div>
+			</div>
+	</main>
+	<footer>Hecho con carino &copy;2023</footer>
+</body>
+</html>
